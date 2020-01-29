@@ -17,7 +17,7 @@ def start(update, context):
 
 def countdown(update, context):
     response = requests.get('https://blockstream.info/api/blocks/tip/height')
-    blocks_until_fast = int(response.text) % 2000
+    blocks_until_fast = 2000 - (int(response.text) % 2000)
     hours_until = (blocks_until_fast / 6)
     message = "Next fast in {} blocks ({:.2f} hours).".format(blocks_until_fast, hours_until)
     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
