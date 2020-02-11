@@ -1,5 +1,5 @@
 import unittest
-from main import _countdown
+from commands.countdown import _countdown
 
 
 class TestMethods(unittest.TestCase):
@@ -19,10 +19,6 @@ class TestMethods(unittest.TestCase):
     def test_countdown_almost(self):
         r = _countdown(blockheight=611999)
         self.assertEqual("Next fast in 1 blocks (0.2 hours).", r)
-
-    # def test_countdown_start(self):
-    #     r = _countdown(blockheight=614000)
-    #     self.assertEqual("", r)
 
 
 
