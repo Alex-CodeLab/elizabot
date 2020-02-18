@@ -1,3 +1,4 @@
 config.py
 *.pyc
 sqlite.db
+commands/test.js
