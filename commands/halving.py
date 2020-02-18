@@ -12,5 +12,5 @@ def _halving():
     halving_block = 630000
     blocks_until_halving = halving_block - block_height
     time_until_halving = int(blocks_until_halving / 6.2)
-    message = "Blocks until halving: {} ({} hours to go...) ".fomat(blocks_until_halving, time_until_halving)
+    message = "Blocks until halving: {} ({} hours to go...) ".format(blocks_until_halving, time_until_halving)
     return message
