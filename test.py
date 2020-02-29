@@ -1,6 +1,6 @@
 import unittest
 from commands.countdown import _countdown
-
+from commands.halving import _halving
 
 class TestMethods(unittest.TestCase):
 
@@ -20,9 +20,9 @@ class TestMethods(unittest.TestCase):
         r = _countdown(blockheight=611999)
         self.assertEqual("Next fast in 1 blocks (0.2 hours).", r)
 
-    def test_countdown_almost(self):
-        r = _countdown()
-        print(r)
+    def test_haliving(self):
+        r = _halving()
+        self.assertEqual("Blocks until halving:", r[:21])
 
 
 
