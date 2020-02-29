@@ -12,8 +12,6 @@ def _halving():
     response = requests.get('https://blockstream.info/api/blocks/tip/height')
     block_height = int(response.text)
     halving_block = 630000
-    today = date.today()
-    EndDate = date.today() + timedelta(days=10)
     blocks_until_halving = halving_block - block_height
     hours_until_halving = int(blocks_until_halving / 6.2)
     halvingDate = date.today() + timedelta(days=hours_until_halving/24)
