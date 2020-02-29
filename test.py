@@ -20,6 +20,11 @@ class TestMethods(unittest.TestCase):
         r = _countdown(blockheight=611999)
         self.assertEqual("Next fast in 1 blocks (0.2 hours).", r)
 
+    def test_countdown_almost(self):
+        r = _countdown()
+        print(r)
+
+
 
 
 if __name__ == '__main__':

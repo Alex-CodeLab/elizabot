@@ -15,9 +15,10 @@ def _countdown(blockheight=False):
     else:
         block_height = blockheight
     blocks_until_fast = 2000 - (block_height % 2000)
+
     hours_until = (blocks_until_fast / 6.2)
 
-    # 1784 is about 36hours
+    # 216 is about 36hours
     if blocks_until_fast > 1784:
         message = _countdown_while_fast(block_height)
     else:
@@ -35,6 +36,7 @@ def _countdown_while_fast(block_height):
     end_timestamp = int(start_timestamp) + 129600 # 36hours
     current_time = int(time.time())
     seconds_togo = end_timestamp - current_time
+    hours_since_fast = (current_time - start_timestamp)/ 3600
     hours_togo = seconds_togo /3600
-    message = "We're fasting! This fast started at {}. About {:.1f} more hours to go.".format(start_block, hours_togo)
+    message = "We're fasting! This fast started at {}, {:.1f} hours ago. ".format(start_block, hours_since_fast)
     return message
